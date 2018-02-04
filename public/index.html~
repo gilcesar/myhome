@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <base href="/">
+
+    <title>Starter Node and Angular</title>
+
+    <script src="angular/angular.js"></script>
+    <script src="angular-route/angular-route.js"></script>
+	<script src="d3/d3.js"></script>
+ 	<script src="bootstrap/dist/js/bootstrap.js"></script>
+	<script src="n3-charts/build/LineChart.js"></script>
+	<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+
+
+ 	<link type="text/css" rel="stylesheet" href="bootstrap/dist/css/bootstrap.css">
+	<link type="text/css" rel="stylesheet" ng-href="n3-charts/build/LineChart.css">
+    <link rel="stylesheet" type="text/css" href="css/app.css">
+
+
+    <!-- 
+ 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.js"></script>
+ 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.7/angular.js"></script> 
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.7/angular-route.js"></script>
+    -->
+
+    <!-- ANGULAR CUSTOM -->
+    <script type="text/javascript">
+    	angular.module('volt',[]);    
+    </script>
+    <script src="js/controllers/MainCtrl.js"></script>
+    <script src="js/controllers/VoltCtrl.js"></script>
+    <script src="js/services/VoltService.js"></script>
+    <script src="js/appRoutes.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/voltChart.js"></script>
+	
+    
+    
+</head>
+<body ng-app="myhome" >
+
+<div class="container">
+    <!-- HEADER -->
+    <nav class="navbar navbar-inverse">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="/">Stencil: Node and Angular</a>
+        </div>
+
+        <!-- LINK TO OUR PAGES. ANGULAR HANDLES THE ROUTING HERE -->
+
+        <ul class="nav navbar-nav">
+            <li><a href="/volt">Volt</a></li>
+        </ul>
+
+    </nav>
+
+    <!-- ANGULAR DYNAMIC CONTENT -->
+    <div ng-view></div>
+
+</div>
+</body>
+</html>
+
+<!-- 
+https://scotch.io/tutorials/setting-up-a-mean-stack-single-page-application#the-frontend-angularjs
+-->
