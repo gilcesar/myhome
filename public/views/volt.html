@@ -1,5 +1,8 @@
+
 <div class="jumbotron text-center" ng-controller="voltCtrl">
 <link rel="stylesheet" type="text/css" href="css/volt.css"/>
+
+
 
 <table class="table table-striped" >
 <tr>
@@ -23,14 +26,18 @@
 	<td>Carga:</td>	<td>{{voltValues.currentLoad}} A</td>
 </tr>
 </table>
-{{activePowerData}}
 
-
-<fusioncharts
-    width="600" 
-    height="400"
-    type="mscombi2d"
-    datasource="{{dataSource}}"
-></fusioncharts>
+<!--
+<table class="table table-striped">
+<tr ng-repeat="value in activePowerData">
+	<td >{{value.activePower}}</td>
+</tr>
+</table>
+-->
+<!--
+<div class="my-chart">
+      <linechart data="data" options="options"></linechart>
+    </div>
+-->
 
 </div>

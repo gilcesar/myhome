@@ -40,6 +40,7 @@ require('./app/routes')(app); // configure our routes
 // startup our app at http://localhost:8080
 app.listen(port);               
 
+
 // shoutout to the user                     
 console.log('Magic happens on port ' + port);
 

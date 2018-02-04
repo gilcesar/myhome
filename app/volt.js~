@@ -16,7 +16,7 @@ exports.open = function () {
 	port.on('open', () => console.log('Volt connected!'));
 };
 
-var last;
+var last = {};
 
 parser.on('data', function(data){
 	var cleanValues = data.replace(/[^0-9;]|/gm, '').trim();
@@ -40,6 +40,7 @@ exports.setListener = function(callback){
 function toObj(data){
 	var values = data.split(';');
 	var voltObj = {
+		timeStamp		:new Date(),
 		entryTension	:values[0] /10,
 		exitTension		:values[1] /10,
 		exitCurrent		:values[2] /10,

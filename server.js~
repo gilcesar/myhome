@@ -31,6 +31,7 @@ app.use(methodOverride('X-HTTP-Method-Override'));
 
 // set the static files location /public/img will be /img for users
 app.use(express.static(__dirname + '/public')); 
+app.use(express.static(__dirname + '/node_modules')); 
 
 // routes ==================================================
 require('./app/routes')(app); // configure our routes
@@ -38,6 +39,11 @@ require('./app/routes')(app); // configure our routes
 // start app ===============================================
 // startup our app at http://localhost:8080
 app.listen(port);               
+
+        app.get('*', function(req, res) {
+            res.sendFile('index.html'); // load our public/index.html file
+        });
+
 
 // shoutout to the user                     
 console.log('Magic happens on port ' + port);

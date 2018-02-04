@@ -13,6 +13,7 @@
     "angular-route": "^1.6.8",
     "animate.css": "^3.5.2",
     "body-parser": "^1.18.2",
+    "bootstrap": "3",
     "express": "^4.16.2",
     "font-awesome": "^4.7.0",
     "fusioncharts": "^3.12.2",

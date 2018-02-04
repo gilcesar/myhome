@@ -40,6 +40,7 @@ exports.setListener = function(callback){
 function toObj(data){
 	var values = data.split(';');
 	var voltObj = {
+		time			:new Date(),
 		entryTension	:values[0] /10,
 		exitTension		:values[1] /10,
 		exitCurrent		:values[2] /10,

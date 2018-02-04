@@ -35,7 +35,7 @@ var Volt = require('./volt');
         // route to handle all angular requests
         //console.log(app.path);
         app.get('*', function(req, res) {
-            res.sendFile(__dirname.replace('app','public/') + 'views/index.html'); // load our public/index.html file
+            res.sendFile(__dirname.replace('app','public/') + 'index.html'); // load our public/index.html file
         });
 
     };
