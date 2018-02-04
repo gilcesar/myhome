@@ -1,0 +1,3 @@
+
+angular.module('myhome', 
+['ngRoute', 'appRoutes', 'MainCtrl', 'voltCtrl', 'voltService']);

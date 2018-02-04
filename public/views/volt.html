@@ -1,0 +1,36 @@
+<div class="jumbotron text-center" ng-controller="voltCtrl">
+<link rel="stylesheet" type="text/css" href="css/volt.css"/>
+
+<table class="table table-striped" >
+<tr>
+	<td>Entrada: </td> <td>{{voltValues.entryTension}} V</td>
+	<td>Nobreak Ligado:</td>	<td>{{voltValues.nobreakOnline}}</td>
+</tr>
+<tr>
+	<td>Saida</td>
+</tr>
+<tr>
+	<td>{{voltValues.exitTension}} V</td>
+	<td>{{voltValues.exitCurrent}} A</td>
+	<td>{{voltValues.activePower}} W</td>
+	<td>{{voltValues.exitCurrent * voltValues.exitTension | number : 2}} VA</td>
+</tr>
+<tr>
+	<td style="text-align:left">Bateria</td>
+</tr>
+<tr>
+	<td>{{voltValues.bateryTension}} V</td>
+	<td>Carga:</td>	<td>{{voltValues.currentLoad}} A</td>
+</tr>
+</table>
+{{activePowerData}}
+
+
+<fusioncharts
+    width="600" 
+    height="400"
+    type="mscombi2d"
+    datasource="{{dataSource}}"
+></fusioncharts>
+
+</div>
