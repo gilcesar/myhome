@@ -1,0 +1,16 @@
+var DB410C = require('GPIO');
+DB410C.GPIOProcessor.getPin(33, function(err, pin) {
+    if(!err) {
+        var pin33 = pin;
+        pin33.setDirection('out', cb);
+        pin33.setValue(1, function(err) {
+            console.log(err);
+        });
+        pin33.setValue(0, function(err) {
+            console.log(err);
+        });
+        pin33.getValue(function(err, val) {
+            console.log(err);
+        });        
+    }
+}) 
