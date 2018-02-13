@@ -1,4 +1,4 @@
-angular.module('volt').controller('voltCtrl', function($scope, voltService) {
+angular.module('board').controller('boardCtrl', function($scope, boardService) {
 
 	$scope.voltValues = {};
 	$scope.voltData = [];

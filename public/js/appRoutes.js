@@ -10,6 +10,10 @@ angular.module('appRoutes', []).config(['$routeProvider', '$locationProvider', f
         .when('/volt', {
             templateUrl: 'views/volt.html',
             controller: 'voltCtrl'
+        })
+        .when('/board', {
+            templateUrl: 'views/board.html',
+            controller: 'boardCtrl'
         });
         
     $locationProvider.html5Mode(true);

@@ -47,7 +47,7 @@ function toObj(data){
 		activePower		:values[3],
 		bateryTension	:values[4] /10,
 		currentLoad		:values[5] /10,
-		nobreakOnline	:values[6] == '0' ? false : true,
+		status			:values[6] == '0' ? "off" : "on",
 		events			:eventToString(values[7]),
 		spare			:values[8]
 	};
@@ -55,9 +55,9 @@ function toObj(data){
 }
 
 function eventToString(value){
-	return value == 0? "Normal" : 
+	return value == 0? "Line Mode" : 
 	value == 4? "Overload" :
-	value == 1000? "nnn" :
+	value == 1000? "Inversor Mode" :
 	value; 
 }
 

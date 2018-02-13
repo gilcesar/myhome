@@ -1,6 +1,7 @@
 // grab the nerd model we just created
 var Nerd = require('./models/nerd');
 var Volt = require('./volt');
+var Board = require('./board');
 
     module.exports = function(app) {
     	
@@ -30,7 +31,13 @@ var Volt = require('./volt');
 			res.json(Volt.request());
 		});
 
+		app.get('/api/board/dig', function(req, res){
+			res.json(Board.readDigValues());
+		});
 
+		app.get('/api/board/ana', function(req, res){
+			res.json(Board.readAnaValues());
+		});
         // frontend routes =========================================================
         // route to handle all angular requests
         //console.log(app.path);

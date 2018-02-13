@@ -28,17 +28,17 @@ function GpioProcessor(){}
 	GpioProcessor.prototype.getPinByNumber = function(pin) {
 		switch(pin) {
 			case 23 : return getPin(36); 
-			case 24 : return getPin(12); 
-			case 25 : return getPin(13); 
-			case 26 : return getPin(69); 
-			case 27 : return getPin(115); 
-			case 28 : return getPin(901); 
-			case 29 : return getPin(24); 
-			case 30 : return getPin(25); 
-			case 31 : return getPin(35); 
-			case 32 : return getPin(34); 
-			case 33 : return getPin(28); 
-			case 34 : return getPin(33); 
+			case 24 : return getPin24(); 
+			case 25 : return getPin25(); 
+			case 26 : return getPin26(); 
+			case 27 : return getPin27(); 
+			case 28 : return getPin28(); 
+			case 29 : return getPin29(); 
+			case 30 : return getPin30(); 
+			case 31 : return getPin31(); 
+			case 32 : return getPin32(); 
+			case 33 : return getPin33(); 
+			case 34 : return getPin34(); 
 		}		
 		
 	};

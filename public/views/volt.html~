@@ -3,7 +3,6 @@
 <link rel="stylesheet" type="text/css" href="css/volt.css"/>
 
 
-<div id="chartContainer" style="height: 300px; width: 100%;"></div>
 
 <table class="table table-striped" >
 <tr>

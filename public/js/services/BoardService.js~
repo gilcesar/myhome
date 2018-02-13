@@ -1,0 +1,15 @@
+angular.module('board').factory('boardService', function($http) {
+    var _getDigValues = function(){
+	    return $http.get('/api/board/dig');
+    };
+    var _getAnaValues = function(){
+	    return $http.get('/api/board/ana');
+    };
+
+	return {
+		getDigValues: _getDigValues
+		,getAnaValues: _getAnaValues
+		//,save: _save
+	};
+});
+

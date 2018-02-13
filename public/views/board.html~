@@ -1,0 +1,24 @@
+
+<div class="jumbotron text-center" ng-controller="voltCtrl">
+<table class="table table-striped" >
+<tr>
+	<td>Pin 23: </td> <td>{{db.pin23}} V</td>
+	<td>Pin 24: </td> <td>{{db.pin24}} V</td>
+	<td>Pin 25: </td> <td>{{db.pin25}} V</td>
+	<td>Pin 26: </td> <td>{{db.pin26}} V</td>
+</tr>
+<tr>
+	<td>Pin 27: </td> <td>{{db.pin27}} V</td>
+	<td>Pin 28: </td> <td>{{db.pin28}} V</td>
+	<td>Pin 29: </td> <td>{{db.pin29}} V</td>
+	<td>Pin 30: </td> <td>{{db.pin30}} V</td>
+</tr>
+<tr>
+	<td>Pin 31: </td> <td>{{db.pin31}} V</td>
+	<td>Pin 32: </td> <td>{{db.pin32}} V</td>
+	<td>Pin 33: </td> <td>{{db.pin33}} V</td>
+	<td>Pin 34: </td> <td>{{db.pin34}} V</td>
+</tr>
+</table>
+
+</div>

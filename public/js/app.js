@@ -1,3 +1,3 @@
 
 angular.module('myhome', 
-['ngRoute', 'appRoutes', 'MainCtrl', 'volt', 'n3-line-chart']);
+['ngRoute', 'appRoutes', 'MainCtrl', 'volt', 'board']);
