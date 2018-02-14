@@ -1,3 +1,3 @@
 
 angular.module('myhome', 
-['ngRoute', 'appRoutes', 'MainCtrl', 'volt', 'board']);
+['ngRoute', 'appRoutes', 'MainCtrl', 'volt', 'board', 'uiSwitch']);

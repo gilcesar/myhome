@@ -1,6 +1,15 @@
 
 <div class="jumbotron text-center" ng-controller="voltCtrl">
+
+<form>
+	<switch id="pin23" name="pin23" ng-model="pin23" on="On" off="Off"
+	class="green"></switch>
+	<br>{{pin23}}
+</form>
+
+<!--
 <table class="table table-striped" >
+
 <tr>
 	<td>Pin 23: </td> <td>{{board.pin23}} V</td>
 	<td>Pin 24: </td> <td>{{board.pin24}} V</td>
@@ -20,5 +29,5 @@
 	<td>Pin 34: </td> <td>{{board.pin34}} V</td>
 </tr>
 </table>
-
+-->
 </div>

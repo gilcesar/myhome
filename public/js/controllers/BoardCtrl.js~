@@ -2,7 +2,6 @@ angular.module('board').controller('boardCtrl', function($scope, boardService) {
 
 	$scope.digValues = {};
 	$scope.anaValues = {};
-	$scope.pin23;
 	
 	var loadDigValues = function () {
 		console.log('passei dig values');

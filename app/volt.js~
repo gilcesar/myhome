@@ -47,7 +47,7 @@ function toObj(data){
 		activePower		:values[3],
 		bateryTension	:values[4] /10,
 		currentLoad		:values[5] /10,
-		nobreak			:values[6] == '0' ? "off" : "on",
+		status			:values[6] == '0' ? "off" : "on",
 		events			:eventToString(values[7]),
 		spare			:values[8]
 	};

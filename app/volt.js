@@ -27,6 +27,7 @@ parser.on('data', function(data){
 
 
 exports.request = function () {
+	console.log('request');
 	port.write('sts\r');
 	return last;
 	//return {"r":222};

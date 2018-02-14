@@ -32,10 +32,12 @@ var Board = require('./board');
 		});
 
 		app.get('/api/board/dig', function(req, res){
+			console.log('app.get dig');
 			res.json(Board.readDigValues());
 		});
 
 		app.get('/api/board/ana', function(req, res){
+			console.log('app.get ana');
 			res.json(Board.readAnaValues());
 		});
         // frontend routes =========================================================
