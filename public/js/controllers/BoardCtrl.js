@@ -1,24 +1,21 @@
 angular.module('board').controller('boardCtrl', function($scope, boardService) {
 
-	$scope.digValues = {};
-	$scope.anaValues = {};
-	$scope.pin23;
+	$scope.pinStatus = [];
 	
-	var loadDigValues = function () {
-		console.log('passei dig values');
-		boardService.getDigValues()
+	function init() {
+		var i;
+    	for (i = 0; i < 35; i++) {
+      		$scope.pinStatus.push(0);
+    	}
+	}
+	
+	$scope.pinClick = function (value, pin) {
+		$scope.pinStatus[pin] = value;
+		
+		boardService.pinSetValue(value, pin)
 		.then(function (response) {
-			addValue(response.data);
-			return $scope.digValues = response.data;
+			console.log('==== ' + response.data);
 		});
-	};
-	var loadAnaValues = function () {
-		console.log('passei ana values');
-		boardService.getDigValues()
-		.then(function (response) {
-			addValue(response.data);
-			return $scope.anaValues = response.data;
-		});
-	};
+	}
 	
 });

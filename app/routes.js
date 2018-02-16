@@ -31,15 +31,22 @@ var Board = require('./board');
 			res.json(Volt.request());
 		});
 
-		app.get('/api/board/dig', function(req, res){
-			console.log('app.get dig');
-			res.json(Board.readDigValues());
+		app.get('/api/board/:pin', function(req, res){
+			var pin = req.params.pin;
+			console.log('app.get ' + pin);
+			res.json(Board.getPinStatus(pin));
 		});
 
-		app.get('/api/board/ana', function(req, res){
-			console.log('app.get ana');
-			res.json(Board.readAnaValues());
+		app.get('/api/board/set/:pin', function(req, res){
+			var pin = req.params.pin;
+			res.json(Board.setPin(pin));
 		});
+
+		app.get('/api/board/unset/:pin', function(req, res){
+			var pin = req.params.pin;
+			res.json(Board.unsetPin(pin));
+		});
+
         // frontend routes =========================================================
         // route to handle all angular requests
         //console.log(app.path);

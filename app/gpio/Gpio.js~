@@ -69,7 +69,7 @@ Gpio.prototype.getValue = function(pin) {
 	console.log("Get value");
 	var destination = path.concat("/gpio", pin, "/value");
 	var contents = fs.readFileSync(destination).toString();
-	return contents.replace('\n','');
+	return contents.replace(/'\n','');
 };
 
 /**

@@ -1,33 +1,45 @@
 
-<div class="jumbotron text-center" ng-controller="voltCtrl">
+<div class="jumbotron text-center" ng-controller="boardCtrl">
 
-<form>
-	<switch id="pin23" name="pin23" ng-model="pin23" on="On" off="Off"
-	class="green"></switch>
-	<br>{{pin23}}
-</form>
+	<switch id="pin23Switch" name="pin23Switch" ng-model="pinStatus[23]"
+	ng-click="pinClick(onOff,23)" class="green"></switch>
+	
+	<switch id="pin24Switch" name="pin24Switch" ng-model="pinStatus[24]"
+	ng-click="pinClick(true, 24)" class="green"></switch>
 
-<!--
-<table class="table table-striped" >
+	<switch id="pin25Switch" name="pin25Switch" ng-model="pinStatus[25]"
+	ng-click="pinClick(25)" class="green"></switch>
 
-<tr>
-	<td>Pin 23: </td> <td>{{board.pin23}} V</td>
-	<td>Pin 24: </td> <td>{{board.pin24}} V</td>
-	<td>Pin 25: </td> <td>{{board.pin25}} V</td>
-	<td>Pin 26: </td> <td>{{board.pin26}} V</td>
-</tr>
-<tr>
-	<td>Pin 27: </td> <td>{{board.pin27}} V</td>
-	<td>Pin 28: </td> <td>{{board.pin28}} V</td>
-	<td>Pin 29: </td> <td>{{board.pin29}} V</td>
-	<td>Pin 30: </td> <td>{{board.pin30}} V</td>
-</tr>
-<tr>
-	<td>Pin 31: </td> <td>{{board.pin31}} V</td>
-	<td>Pin 32: </td> <td>{{board.pin32}} V</td>
-	<td>Pin 33: </td> <td>{{board.pin33}} V</td>
-	<td>Pin 34: </td> <td>{{board.pin34}} V</td>
-</tr>
-</table>
--->
+	<switch id="pin26Switch" name="pin26Switch" ng-model="pinStatus[26]"
+	ng-click="pinClick(26)" class="green"></switch>
+
+	<switch id="pin27Switch" name="pin27Switch" ng-model="pinStatus[27]"
+	ng-click="pinClick(27)" class="green"></switch>
+
+	<switch id="pin28Switch" name="pin28Switch" ng-model="pinStatus[28]"
+	ng-click="pinClick(28)" class="green"></switch>
+
+	<switch id="pin29Switch" name="pin29Switch" ng-model="pinStatus[29]"
+	ng-click="pinClick(29)" class="green"></switch>
+
+	<switch id="pin30Switch" name="pin30Switch" ng-model="pinStatus[30]"
+	ng-click="pinClick(30)" class="green"></switch>
+
+	<switch id="pin31Switch" name="pin31Switch" ng-model="pinStatus[31]"
+	ng-click="pinClick(31)" class="green"></switch>
+
+	<switch id="pin32Switch" name="pin32Switch" ng-model="pinStatus[32]"
+	ng-click="pinClick(32)" class="green"></switch>
+
+	<switch id="pin33Switch" name="pin33Switch" ng-model="pinStatus[33]"
+	ng-click="pinClick(33)" class="green"></switch>
+
+	<switch id="pin34Switch" name="pin34Switch" ng-model="pinStatus[34]"
+	ng-click="pinClick(34)" class="green"></switch>
+
+	<switch id="pin23Switch" name="pin23Switch" ng-model="pin24Status"
+	ng-click="pinClick(24)" class="green"></switch>
+	
+<br>{{pin27Status}}
+
 </div>

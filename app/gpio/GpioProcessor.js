@@ -21,12 +21,12 @@ function GpioProcessor(){}
 	 */
 	function getPin(pin) {
 		pinList.push(pin);
-		exportPin(pin);
+		tryExportPin(pin);
 		return new Gpio(pin);
 	}
 	
-	GpioProcessor.prototype.getPinByNumber = function(pin) {
-		switch(pin) {
+	function getPinBy(pin){
+		switch(parseInt(pin)) {
 			case 23 : return getPin(36); 
 			case 24 : return getPin(12); 
 			case 25 : return getPin(13); 
@@ -39,7 +39,11 @@ function GpioProcessor(){}
 			case 32 : return getPin(34); 
 			case 33 : return getPin(28); 
 			case 34 : return getPin(33); 
-		}		
+		}	
+	}
+	
+	GpioProcessor.prototype.getPinByNumber = function(pin) {
+		return getPinBy(pin);
 		
 	};
 
@@ -149,12 +153,22 @@ function GpioProcessor(){}
 		fs.writeFileSync(destination, pin);
 	};
 	
+	function tryExportPin(pin){
+		try{
+			exportPin(pin);
+		}catch (ex) {
+			console.log("resource busy pin" + pin)
+			unexportPin(pin);
+			exportPin(pin);
+		}
+	};
+
 	/**
 	 * Disable access to GPIO.
 	 * @param pin GPIO pin to disable access.
 	 */
 	function unexportPin(pin){
-		console.log("unExporting Pin");
+		console.log("unExporting Pin " + pin);
 		var destination = path.concat("/unexport");
 		fs.writeFileSync(destination, pin);
 	};
@@ -167,6 +181,12 @@ function GpioProcessor(){}
 	    pinList = [];
 	};
 	
+	GpioProcessor.prototype.clearPin = function(pin) {
+		unexportPin(getPinBy(pin));
+                //console.log("Disable pin: " + pinList[i]);
+            //}
+	    //pinList = [];
+	};
 
 
 
