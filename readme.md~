@@ -1,0 +1,9 @@
+Definiçoes:
+Horario de Ensolacao: horario > hh:mm[07:00] && < [18:00]
+Horaio de Geraçao: 
+
+Regras:
+1. Se (bateria < [20]% de descarga && sem geraçao), passar para modo rede
+2. Se ( e iluminaçao desligada, desligar geladeira
+	2.1 Ao ligar alguma iluminaçao, ligar geladeira
+3. Se (bateria < [15]% de descarga), geladeira em modo rede

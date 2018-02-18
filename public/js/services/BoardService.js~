@@ -3,9 +3,9 @@ angular.module('board').factory('boardService', function($http) {
     	//console.log('http dig')
 	    return $http.get('/api/board/dig');
     };
-    var _getAnaValues = function(){
+    var _getAnaValue = function(pin){
     	//console.log('http ana')
-	    return $http.get('/api/board/ana');
+	    return $http.get('/api/board/ana/:' + pin);
     };
 
     var _pinSetValue = function(value, pin){
@@ -15,7 +15,7 @@ angular.module('board').factory('boardService', function($http) {
 
 	return {
 		getDigValues: _getDigValues
-		,getAnaValues: _getAnaValues
+		,getAnaValue: _getAnaValue
 		,pinSetValue: _pinSetValue
 	};
 });

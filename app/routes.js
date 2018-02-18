@@ -47,6 +47,11 @@ var Board = require('./board');
 			res.json(Board.unsetPin(pin));
 		});
 
+		app.get('/api/board/ana/:pin', function(req, res){
+			var pin = req.params.pin;
+			res.json(Board.readAna(pin));
+		});
+
         // frontend routes =========================================================
         // route to handle all angular requests
         //console.log(app.path);

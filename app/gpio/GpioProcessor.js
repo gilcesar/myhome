@@ -32,7 +32,8 @@ function GpioProcessor(){}
 			case 25 : return getPin(13); 
 			case 26 : return getPin(69); 
 			case 27 : return getPin(115); 
-			case 28 : return getPin(901); 
+			//case 28 : return getPin(901); 
+			case 28 : return getPin(4);
 			case 29 : return getPin(24); 
 			case 30 : return getPin(25); 
 			case 31 : return getPin(35); 

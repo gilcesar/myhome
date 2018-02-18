@@ -7,6 +7,7 @@ var iGpioProcessor = require('./gpio/GpioProcessor');
 var gpioProcessor = new iGpioProcessor();
 
 function configPin(out, number) {
+	//console.log(">>" + out);
 	console.log('config pin ' + number + ' as ' + (out? 'out' : 'in'));
 	var p = gpioProcessor.getPinByNumber(number);
 	try{
@@ -40,4 +41,18 @@ exports.unsetPin = function(pin){
 	var p = configPin(true, pin);//modo escrita
 	return p.low(p.pin);
 }
-//gpioProcessor.clearPin(27);
+
+exports.readAna = function(pin){
+	//console.log('---- unset ' + pin);
+	var p = configPin(false, pin);//modo leitura
+	return p.getValue(p.pin);
+}
+
+var pBut = configPin(false, 27);
+var pLed = configPin(true, 29);
+
+var a = setInterval(function () {
+	if(pBut.getValue(pBut.pin) == '1'){
+		pLed.high(pLed.pin);
+	}
+}, 500);

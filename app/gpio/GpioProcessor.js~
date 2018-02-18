@@ -168,7 +168,7 @@ function GpioProcessor(){}
 	 * @param pin GPIO pin to disable access.
 	 */
 	function unexportPin(pin){
-		console.log("unExporting Pin " + pin.pin);
+		console.log("unExporting Pin " + pin);
 		var destination = path.concat("/unexport");
 		fs.writeFileSync(destination, pin);
 	};
