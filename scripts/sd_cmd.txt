@@ -1,0 +1,10 @@
+sudo fdisk /dev/mmcblk1
+sudo mkfs.ext3 /dev/mmcblk1p1
+sudo mkdir /media/sdcard
+sudo mkswap /dev/mmcblk1p2
+
+sudo chmod 755 boot_sd_up
+sudo cp boot_sd_up /etc/init.d
+
+sudo update-rc.d boot_sd_up defaults
+sudo service --status-all

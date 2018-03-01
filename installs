@@ -1,0 +1,126 @@
+====editors====
+$ sudo apt-get install eclipse
+$ sudo apt-get install kate
+
+==== browser=====
+$ sudo apt-get install iceweasel
+$ sudo apt-get install midori
+==================
+
+=====mraa======
+https://www.96boards.org/blog/install-96boardgpio-libsoc-libmraa-new-image/
+
+$ sudo apt-get install git build-essential autoconf automake libtool swig3.0 python-dev nodejs-dev cmake pkg-config libpcre3-dev
+
+$ sudo apt-get clean
+
+$ sudo git clone https://github.com/96boards/96boards-tools.git /etc/udev/rules.d/96board-tools
+
+
+-- edit /etc/profile.d/96boards-sensors.sh
+export JAVA_TOOL_OPTIONS=-"Dgnu.io.rxtx.SerialPorts=/dev/tty96B0"
+export MONITOR_PORT=/dev/tty96B0 
+export PYTHONPATH="$PYTHONPATH:/usr/local/lib/python2.7/site-packages"
+--
+sudo cp /etc/profile.d/96boards-sensors.sh /etc/X11/Xsession.d/96boards-sensors 
+
+>>>> Install and build libsoc:
+$ git clone https://github.com/jackmitch/libsoc.git
+$ cd libsoc.git
+$ autoreconf -i
+$ ./configure --enable-python=2 --enable-board=dragonboard410c
+$ make
+$ make install
+
+--Libraries have been installed in:
+--   /usr/local/lib/python2.7/dist-packages/libsoc
+
+
+>>>> Install and build 96BoardsGPIO
+$ git clone https://github.com/96boards/96BoardsGPIO.git
+$ cd 96BoardsGPIO
+$ autoreconf -i
+$ ./configure
+
+--https://contest.embarcados.com.br/topico/corrigindo-erro-ls_shared-na-instalacao-da-lib-96boardsgpio/
+
+$ make && sudo make install
+
+
+--Install and build MRAA library
+
+$ git clone https://github.com/intel-iot-devkit/mraa.git
+$ mkdir -p mraa/build
+$ cd mraa/build
+$ cmake ..
+$ make
+$ sudo make install
+$ sudo ldconfig /usr/local/lib
+
+--Install and build UPM library
+
+$ sudo ln -s /usr/bin/swig3.0 /usr/bin/swig
+$ git clone https://github.com/intel-iot-devkit/upm.git
+$ mkdir -p upm/build
+$ cd upm/build
+$ cmake -DBUILDSWIGNODE=OFF ..
+$ make
+$ sudo make install
+$ sudo ldconfig /usr/local/lib/libump-*
+==============
+
+
+=======Reboot========
+--Reset the system to pick up all of the changes
+$ sudo reboot
+===========
+
+===test==========
+-- Install and build test code
+
+$ git clone https://github.com/dmandala/library_test.git
+$ cd library_test
+$ cat README.md
+
+
+======================
+
+NODE_PATH="/usr/local/lib/node_modules"
+PYTHONPATH="/usr/local/lib/python2.7/site-packages"
+JAVA_HOME="/usr/lib/jvm/default-java"
+export NODE_PATH
+export PYTHONPATH
+export JAVA_HOME
+
+
+
+
+
+===============
+--Install NodeJs:
+
+apt-get install git gcc g++ python2.7 build-essential
+cd ~/Documents
+git clone https://github.com/nodejs/node.git
+cd node
+./configure
+make
+sudo make install
+
+===============
+
+git clone https://github.com/swig/swig.git
+cd swig
+./autogen.sh (it creates the configure script)
+./configure
+make
+sudo make install
+
+
+
+========
+
+sudo apt-get install  xfonts-base
+sudo apt-get install tightvncserver
+
+
