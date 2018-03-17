@@ -8,3 +8,9 @@ sudo cp boot_sd_up /etc/init.d
 
 sudo update-rc.d boot_sd_up defaults
 sudo service --status-all
+
+sudo lsof -i
+sudo netstat -lptu
+sudo netstat -tulpn
+
+vncserver -localhost no

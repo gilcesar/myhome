@@ -1,3 +1,4 @@
 #!/bin/sh
 cd /home/linaro/scripts
 sudo ./sd_up.sh
+sudo ./vncserver_up.sh

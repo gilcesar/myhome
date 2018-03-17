@@ -1,5 +1,8 @@
 ====editors====
 $ sudo apt-get install eclipse
+    http://max.berger.name.s3-website-us-east-1.amazonaws.com/howto/cdt/ar01s04.html#installingcdt
+    
+    - help > install new software > Indigo CDT - http://download.eclipse.org/tools/cdt/releases/indigo
 $ sudo apt-get install kate
 
 ==== browser=====
@@ -16,12 +19,14 @@ $ sudo apt-get clean
 
 $ sudo git clone https://github.com/96boards/96boards-tools.git /etc/udev/rules.d/96board-tools
 
+sudo cp 96board-tools/70-96boards-common.rules /etc/udev/rules.d/
 
 -- edit /etc/profile.d/96boards-sensors.sh
 export JAVA_TOOL_OPTIONS=-"Dgnu.io.rxtx.SerialPorts=/dev/tty96B0"
 export MONITOR_PORT=/dev/tty96B0 
 export PYTHONPATH="$PYTHONPATH:/usr/local/lib/python2.7/site-packages"
 --
+
 sudo cp /etc/profile.d/96boards-sensors.sh /etc/X11/Xsession.d/96boards-sensors 
 
 >>>> Install and build libsoc:
@@ -42,7 +47,16 @@ $ cd 96BoardsGPIO
 $ autoreconf -i
 $ ./configure
 
+=====
 --https://contest.embarcados.com.br/topico/corrigindo-erro-ls_shared-na-instalacao-da-lib-96boardsgpio/
+
+Eu fui no arquivo gpio.c que fica em 96BoardsGPIO/lib/ abri no editor de texto e troquei o LS_SHARED por LS_GPIO_SHARED, em seguida:
+
+$ sudo make clean
+$ sudo make install
+$ sudo ldconfig
+=====
+
 
 $ make && sudo make install
 
@@ -53,7 +67,7 @@ $ git clone https://github.com/intel-iot-devkit/mraa.git
 $ mkdir -p mraa/build
 $ cd mraa/build
 $ cmake ..
-$ make
+$ make DBUILDARCH=arm
 $ sudo make install
 $ sudo ldconfig /usr/local/lib
 
@@ -109,18 +123,17 @@ sudo make install
 
 ===============
 
-git clone https://github.com/swig/swig.git
-cd swig
-./autogen.sh (it creates the configure script)
-./configure
-make
-sudo make install
+-- arduino
 
-
-
-========
-
-sudo apt-get install  xfonts-base
-sudo apt-get install tightvncserver
+$ sudo apt-get install arduino
+$ unset JAVA_TOOL_OPTIONS
+$ sudo modprobe usbserial vendor=0x2341 product=0x0042
+$ sudo apt-get install minicom
+$ sudo minicom -s
+   ! Change first line with /dev/ttyAMC0 or whatever you found in your /dev/ directory. 
+   ! Save setup as dfl.
+   
+$ sudo apt-get install kst
+$ sudo apt-get install gtkterm
 
 
